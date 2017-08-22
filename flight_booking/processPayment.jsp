@@ -94,7 +94,7 @@
 						</tr>
 						<tr>
 							<td>Seat Type : <%= (seat_type.equals("eco"))?"Economy":(seat_type.equals("bus")?"Business":"Elite") %></td>
-							<td>Seats Booked : <%= seats %></td>
+							<td>Seats Booked : 3</td>
 							<td>Seat Numbers : E3,G2,A5</td>
 							<td>Total Fare : $2930</td>
 						</tr>

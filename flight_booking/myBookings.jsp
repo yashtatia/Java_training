@@ -42,11 +42,6 @@ a:hover, a:active {
 %>
 
 <jsp:include page = "header.jsp"/>
-<style type="text/css">
-	table tr th, table tr td{
-		text-align: center;
-	}
-</style>
 <div style="margin-top:150px;">
 	
 </div>
@@ -55,7 +50,7 @@ a:hover, a:active {
 				  if(bookedFlights.size()!=0)
 				  {
 				%>
-				<table class="table table-bordered table-hover" style="width:90%;margin:0px auto 100px auto;position:relative;">
+				<table class="table table-bordered table-hover">
 				<tr>
 					<th>Booking Id</th>
 					<th>Carrier Name</th>
@@ -65,7 +60,7 @@ a:hover, a:active {
 					<th>Total seats</th>
 					<th>Date</th>
 					<th>Time</th>
-					<th>Cancel</br>Booking</th>
+					<th></th>
 				</tr>
 				<%  
 					for( int i=0;i<bookedFlights.size();i++){
@@ -75,16 +70,10 @@ a:hover, a:active {
 						<td> <%= bookedFlights.get(i).getCarrierName() %> </td>
 						<td> <%= bookedFlights.get(i).getSource() %> </td>
 						<td> <%= bookedFlights.get(i).getDestination() %> </td>
-						<td> <%= (bookedFlights.get(i).getTypeClass().equals("eco"))?("Economy"):(bookedFlights.get(i).getTypeClass().equals("bus")?"Business":"Elite") %> </td>
+						<td> <%= bookedFlights.get(i).getTypeClass() %> </td>
 						<td> <%= bookedFlights.get(i).getTotalSeats() %> </td>
 						<td> <%= bookedFlights.get(i).getDate() %> </td>
-						<td> <% if( Integer.parseInt(bookedFlights.get(i).getTime().substring(0,2)) >= 12 ){
-								out.write((Integer.parseInt(bookedFlights.get(i).getTime().substring(0,2))-12)+bookedFlights.get(i).getTime().substring(2,5));
-								%>PM<%
-							} else { 
-								out.write(bookedFlights.get(i).getTime().substring(0,5));
-							%>AM <% } %>
-						</td>
+						<td> <%= bookedFlights.get(i).getTime() %> </td>
 						<td> <a href="cancelBooking.jsp?booking_id=<%=bookedFlights.get(i).getBookingId()%>" class="btn btn-large btn-primary">Cancel</a> 
 						</td>
 						

@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-xs-12">
                     <p style="padding:10px;"></p>
-                    <p align=center> &copy; Copyright 2017 SAP Flights</p>
+                    <p align=center>© Copyright 2017 SAP Flights</p>
                 </div>
             </div>
         </div>

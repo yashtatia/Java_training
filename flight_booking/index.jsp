@@ -28,9 +28,6 @@
 		.table td, .table th {
 			text-align: center;   
 		}
-		#city_reverse:hover{
-			border: 1px solid;
-		}
 	</style>
 
 
@@ -41,9 +38,7 @@
 					<div class="col-lg-5">
 						<input class="input-large form-control" type="text" placeholder="From: City or Airport" name="source_id" id="source_id" value="<%= (request.getParameter("source_id") != null)? request.getParameter("source_id"):"" %>" required>
 					</div>
-					<div class="col-lg-2" id="city_reverse" align="center" style="cursor:pointer;">
-						<span class="glyphicon glyphicon-arrow-right"></span>
-					</div>
+					<div class="col-lg-2" align="center"><span class="glyphicon glyphicon-arrow-right"></span></div>
 					
 					<div class="col-lg-5">
 						<input class="input-large form-control" type="text" placeholder="To: City or Airport" name="destination_id" id="destination_id" value="<%= (request.getParameter("destination_id") != null)? request.getParameter("destination_id"):"" %>" required>
@@ -173,23 +168,3 @@
 
 
 	<jsp:include page="footer.jsp" />
-
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#city_reverse").on("click" , function(){
-				var source = $("#source_id").val();
-				var destination = $("#destination_id").val();
-				$("#source_id").val(destination);
-				$("#destination_id").val(source);
-			});
-
-			$("#city_reverse").mouseenter(function(){
-				$("#city_reverse > span").removeClass("glyphicon-arrow-right");
-				$("#city_reverse > span").addClass("glyphicon-arrow-left");
-			});
-			$("#city_reverse").mouseleave(function(){
-				$("#city_reverse > span").removeClass("glyphicon-arrow-left");
-				$("#city_reverse > span").addClass("glyphicon-arrow-right");
-			});
-		});
-	</script>

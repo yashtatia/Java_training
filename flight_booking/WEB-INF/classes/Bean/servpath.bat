@@ -1,0 +1,1 @@
+set Classpath=%classpath%;C:\Program Files\Apache Software Foundation\Tomcat 9.0\lib\servlet-api.jar;C:\Program Files (x86)\MySQL\Connector.J 5.1\mysql-connector-java-5.1.42-bin.jar;

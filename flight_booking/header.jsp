@@ -19,7 +19,10 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.jsp"><img src="assets/img/sap.png" height=40 width=40></a>
                 </div>
-                
+                <div class="navbar-header" style="color:white;margin-top:2px;">
+                    <h3>FLIGHT BOOKING SYSTEM</h3>
+                </div>
+
                 
                 <% if( session.getAttribute("isLoggedIn") == null) { %>
                     <ul class="nav navbar-nav navbar-right" style="cursor: pointer;">

@@ -13,6 +13,7 @@
 <%! int user_miles; %>
 <%! int miles_earned; %>
 <%! int choice; %>
+<%! int discount; %>
 
 <% if(request.getParameter("flight_id") != null && request.getParameter("seat_type") != null && request.getParameter("seats") != null) {
 	flight_id = Integer.parseInt(request.getParameter("flight_id"));
@@ -30,6 +31,7 @@
 	miles_remaining = fare[2];
 	miles_earned = fare[3];
 	miles_used = user_miles - miles_remaining;
+	discount = (int)(miles_used/2);
 }
 %>
 
@@ -62,7 +64,7 @@
 				<div class="radio">
 				  <label >
 				    <input type="radio" name="payment_choice" value="with_miles" checked>
-				     Using Miles: <%= miles_used %> : <%= "$"+fare[0] %> CC payment
+				     Using Miles: <%= miles_used %>(<%="$"+discount%>) + <%= "$"+fare[0] %> CC payment
 				     <br>(Miles Remaining : <%= miles_remaining %>)
 				  </label>
 				</div>
